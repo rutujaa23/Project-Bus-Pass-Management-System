@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% load static %}
+    <title>Bus Pass System|| Base File </title>
+ 
+    
+      <!-- Google font-->
+      <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600" rel="stylesheet">
+      <!-- Required Fremwork -->
+      <link rel="stylesheet" type="text/css" href="{% static 'assets/css/bootstrap/css/bootstrap.min.css' %}">
+      <!-- themify-icons line icon -->
+      <link rel="stylesheet" type="text/css" href="{% static 'assets/icon/themify-icons/themify-icons.css'%}">
+	  <link rel="stylesheet" type="text/css" href="{% static 'assets/icon/font-awesome/css/font-awesome.min.css'%}">
+      <!-- ico font -->
+      <link rel="stylesheet" type="text/css" href="{% static 'assets/icon/icofont/css/icofont.css'%}">
+      <!-- Style.css -->
+      <link rel="stylesheet" type="text/css" href="{% static 'assets/css/style.css'%}">
+      <link rel="stylesheet" type="text/css" href="{% static 'assets/css/jquery.mCustomScrollbar.css'%}">
+  </head>
+
+  <body>
+  
+	
+       <!-- Pre-loader start -->
+    <div class="theme-loader">
+        <div class="loader-track">
+            <div class="loader-bar"></div>
+        </div>
+    </div>
+    <!-- Pre-loader end -->
+    <div id="pcoded" class="pcoded">
+        <div class="pcoded-overlay-box"></div>
+        <div class="pcoded-container navbar-wrapper">
+
+            {% include 'includes/header.html' %}
+            <div class="pcoded-main-container">
+                <div class="pcoded-wrapper">
+                    {% include 'includes/sidebar.html' %}
+                    <div class="pcoded-content">
+                        <div class="pcoded-inner-content">
+                            <div class="main-body">
+                                <div class="page-wrapper">
+
+                                    <div class="page-body">
+                                      <div class="row">
+
+                                            <!-- order-card start -->
+                                        
+                                            {% block content %}
+                                            {% endblock %}
+                                       
+                                            <!-- order-card end -->
+
+                                        </div>
+                                    </div>
+
+                                    <div id="styleSelector">
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+      
+<!-- Required Jquery -->
+<script type="text/javascript" src="{% static 'assets/js/jquery/jquery.min.js'%}"></script>
+<script type="text/javascript" src="{% static 'assets/js/jquery-ui/jquery-ui.min.js'%}"></script>
+<script type="text/javascript" src="{% static 'assets/js/popper.js/popper.min.js'%}"></script>
+<script type="text/javascript" src="{% static 'assets/js/bootstrap/js/bootstrap.min.js'%}"></script>
+<!-- jquery slimscroll js -->
+<script type="text/javascript" src="{% static 'assets/js/jquery-slimscroll/jquery.slimscroll.js'%}"></script>
+<!-- modernizr js -->
+<script type="text/javascript" src="{% static 'assets/js/modernizr/modernizr.js'%}"></script>
+<!-- am chart -->
+<script src="{% static 'assets/pages/widget/amchart/amcharts.min.js'%}"></script>
+<script src="{% static 'assets/pages/widget/amchart/serial.min.js'%}"></script>
+<!-- Chart js -->
+<script type="text/javascript" src="{% static 'assets/js/chart.js/Chart.js'%}"></script>
+<!-- Todo js -->
+<script type="text/javascript " src="{% static 'assets/pages/todo/todo.js'%} "></script>
+<!-- Custom js -->
+<script type="text/javascript" src="{% static 'assets/pages/dashboard/custom-dashboard.min.js'%}"></script>
+<script type="text/javascript" src="{% static 'assets/js/script.js'%}"></script>
+<script type="text/javascript " src="{% static 'assets/js/SmoothScroll.js'%}"></script>
+<script src="{% static 'assets/js/pcoded.min.js'%}"></script>
+<script src="{% static 'assets/js/vartical-demo.js'%}"></script>
+<script src="{% static 'assets/js/jquery.mCustomScrollbar.concat.min.js'%}"></script>
+</body>
+
+</html>

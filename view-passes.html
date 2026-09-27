@@ -1,0 +1,82 @@
+{% extends 'base.html' %}
+{% block content %}
+<script type="text/javascript">     
+    function PrintDiv() {    
+       var divToPrint = document.getElementById('divToPrint');
+       var popupWin = window.open('', '_blank', 'width=500,height=500');
+       popupWin.document.open();
+       popupWin.document.write('<html><body onload="window.print()">' + divToPrint.innerHTML + '</html>');
+        popupWin.document.close();
+            }
+ </script>
+<div class="col-sm-12">
+<div class="card">
+    
+        <div class="card-block" id="divToPrint">
+                
+                {% include 'includes/messages.html' %}
+                {% csrf_token %}
+                
+                        <table border="1" class="table table-bordered" > 
+                            <tr align="center">
+<td colspan="6" style="font-size:20px;color:blue">
+Pass ID: {{passes.passnumber}}</td></tr>
+<tr>
+<th scope>Category</th>
+<td colspan="3">{{passes.category_id.categoryname}}</td>
+</tr>
+<tr>
+<th scope>Full Name</th>
+<td colspan="3">{{passes.fullname}}</td>
+
+</tr>
+<tr>
+<th scope>Photo</th>
+<td colspan="3"><img src="{{passes.profile_pic1.url}}" width="50" height="50"></td>
+
+</tr>
+
+<tr>
+<th scope>Mobile Number</th>
+<td>{{passes.mobilenumber}}</td>
+<th scope>Email</th>
+<td>{{passes.email}}</td>
+</tr>
+<tr>
+<th scope>Identity Type</th>
+<td>{{passes.identitytype}}</td>
+<th scope>Identity Card Number</th>
+<td>{{passes.identitycardnumber}}</td>
+
+</tr>
+<tr>
+<th scope>Source</th>
+<td>{{passes.source}}</td>
+<th scope>Destination</th>
+<td>{{passes.destinations}}</td>
+</tr>
+<tr>
+<th scope>From Date</th>
+<td>{{passes.fromdate}}</td>
+<th scope>To Date</th>
+<td>{{passes.todate}}</td>
+</tr>
+<tr>
+
+<th scope>Cost</th>
+<td>{{passes.cost}}</td>
+<th scope>Pass Creation Date</th>
+<td>{{passes.passcreated_at}}</td>
+</tr>
+                            
+
+</table>
+<p style="text-align: center;font-size: 20px;color: red">
+<input type="button" class="btn btn-primary btn-user btn-block" value="print" onclick="PrintDiv();" /></p>
+                    
+                        </div>
+                                              
+                    </div>   
+                    </div>              
+
+{% endblock %}

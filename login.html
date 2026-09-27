@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% load static %}
+    <title>Bus Pass System || login Page </title>
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600" rel="stylesheet">
+    <!-- Required Fremwork -->
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/css/bootstrap/css/bootstrap.min.css'%}">
+    <!-- themify-icons line icon -->
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/icon/themify-icons/themify-icons.css'%}">
+    <!-- ico font -->
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/icon/icofont/css/icofont.css'%}">
+    <!-- Style.css -->
+<link rel="stylesheet" type="text/css" href="{% static 'assets/css/style.css'%}"> 
+
+    
+</head>
+
+<body class="fix-menu">
+  
+
+    <section class="login p-fixed d-flex text-center bg-primary common-img-bg">
+        <!-- Container-fluid starts -->
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <!-- Authentication card start -->
+                    <div class="login-card card-block auth-body mr-auto ml-auto">
+                        {% include 'includes/messages.html' %}
+                        <form class="md-float-material" method="POST" action="{% url 'doLogin' %}">
+                            {% csrf_token %}
+                            <div class="text-center">
+                                <h3>Buss Pass Management System</h3>
+                            </div>
+                            <div class="auth-box">
+                                <div class="row m-b-20">
+                                    <div class="col-md-12">
+                                        <h3 class="text-left txt-primary">Sign In</h3>
+                                    </div>
+                                </div>
+                                <hr/>
+                                <div class="input-group">
+                                    <input type="email" class="form-control" placeholder="Your Email Address" name="email">
+                                    <span class="md-line"></span>
+                                </div>
+                                <div class="input-group">
+                                    <input type="password" class="form-control" placeholder="Password" name="password">
+                                    <span class="md-line"></span>
+                                </div>
+                              
+                                <div class="row m-t-30">
+                                    <div class="col-md-12">
+                                        <button type="submit" class="btn btn-primary btn-md btn-block waves-effect text-center m-b-20">Sign in</button>
+                                    </div>
+                                </div>
+                                <hr/>
+                                
+                                <a href="{% url 'landingpage' %}">Back Home</a>
+                                
+                            </div>
+                        </form>
+                        
+                        <!-- end of form -->
+                    </div>
+                    <!-- Authentication card end -->
+                </div>
+                <!-- end of col-sm-12 -->
+            </div>
+            <!-- end of row -->
+        </div>
+        <!-- end of container-fluid -->
+    </section>
+ 
+     <!-- Required Jquery -->
+     <script type="text/javascript" src="{% static 'assets/js/jquery/jquery.min.js'%}"></script>
+     <script type="text/javascript" src="{% static 'assets/js/jquery-ui/jquery-ui.min.js'%}"></script>
+     <script type="text/javascript" src="{% static 'assets/js/popper.js/popper.min.js'%}"></script>
+     <script type="text/javascript" src="{% static 'assets/js/bootstrap/js/bootstrap.min.js'%}"></script>
+     <!-- jquery slimscroll js -->
+     <script type="text/javascript" src="{% static 'assets/js/jquery-slimscroll/jquery.slimscroll.js'%}"></script>
+     <!-- modernizr js -->
+     <script type="text/javascript" src="{% static 'assets/js/modernizr/modernizr.js'%}"></script>
+     <script type="text/javascript" src="{% static 'assets/js/modernizr/css-scrollbars.js'%}"></script>
+     <script type="text/javascript" src="{% static 'assets/js/common-pages.js'%}"></script>
+</body>
+
+</html>
